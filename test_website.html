@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>scream</title>
+    <link rel="stylesheet" src="bootstrap-snip-close.css">
+    <style>
+        /* Popup container - can be anything you want */
+
+        .screamPopup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 0px;
+            width: 100vh;
+            height: 100vh;
+            padding: 0px;
+            background-color: rgba(36, 35, 36, 0.7);
+            z-index: 1000 !important;
+            
+            filter: blur(0px) !important;
+            /* Black background with opacity */
+            color: white;
+            font-size: 16px;
+        }
+
+        .screamMessage {
+            filter: blur(0px);
+
+        }
+        /* The image used */
+        .intruderAlert img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=container>
+
+
+    <h2 style="position: fixed;">Click on the text below to open the sream popup</h2>
+
+    <div id="intruderAlert" class="screamPopup" style="display: none">
+        <div id="intruderMessage" class="screamMessage">
+            <span onclick="stopScreaming()" class=".btn-close">&times; Close</span>
+            <p>UNAUTHORIZED ENTRY DETECTED</p><br \><br \>
+            <p> THE AUTHORITIES WILL BE CONTACTED IN <p id="countdown"></p> MINUTES</p><br \>
+            <p> PLEASE CHECK TO ENSURE THAT THIS IS NOT A FALSE ALARM</p>
+        </div>
+    </div>
+
+    <p>registeredUs Black<p><br \>
+    <p>registeredUs Black<p><br \>
+    <p>registeredUs Black<p><br \>
+    <p>registeredUs Black<p><br \>
+        <img src="khss_logo.png">
+        <p>registeredUs Black<p><br \>
+    <script>
+        let userFace = true;
+        let unknownFace = false;
+        let faceDetcted = userFace;
+        function isIntruder() {
+            return (faceDetcted == unknownFace) ? true : false;
+        }
+
+        // function toggleSwitch(elementID) {
+        //     let switch = document.getElementById(elementID);
+        //     switch.innerHTML = "OFF";
+        //     switchState = true;
+        // }
+        function scream() {
+            if(isIntruder()){
+                document.body.style.filter = "blur(2px)";
+                document.getElementById("intruderAlert").style.display = "block";
+                console.log("faceDetected: " + faceDetcted);
+                faceDetcted = !faceDetcted;
+            }
+            else{
+                document.getElementById("intruderAlert").className = "blur";
+                console.log("faceDetected: " + faceDetcted);
+                faceDetcted = !faceDetcted;
+            }
+        }
+        window.onload = scream();
+        window.onload = scream();
+
+        function stopScreaming() {
+            document.getElementById("intruderAlert").style.display = "none";
+        }
+    </script>
+    </div>
+</body>
+
+</html>
