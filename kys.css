@@ -1,4 +1,6 @@
 :root{
+    @\import "https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap";
+
     --mainMenu-h : 70px;
     --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --font-size: 20px;
