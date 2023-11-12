@@ -1,6 +1,5 @@
 @\import "https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap";
 :root{
-
     --mainMenu-h : 70px;
     --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --font-size: 20px;
@@ -93,9 +92,7 @@ table, tr{
     border-spacing: 0 1.5em;
     width: 100%;
 }
-tr{
-    width: 200px;
-}
+
 tr:hover{
     background-color: rgba(87, 112, 224, 0.7);
 }
@@ -105,10 +102,10 @@ td, th{
     padding: 10px;
     border: none;
     border-spacing: 0 0;
-    display: inline-block;
+    /* display: inline-block; */
 }
 th{
-    width: 100%;
+    /* width: 100%; */
     text-align: left;
 }
 
@@ -172,8 +169,7 @@ th{
 }
 #registeredUsers tr{
     display: inline-block;
-    width: 200px;
-
+    /* width: 200px; */
 }
 
 
