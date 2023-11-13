@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-User Camera Access</title>
+    <style>
+        video {
+            max-width: 100%;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Multi-User Camera Access</h1>
+
+<!-- Local Video -->
+<video id="localVideo" autoplay muted></video>
+
+<!-- Remote Videos Container -->
+<div id="remoteVideos"></div>
+
+<script>
+    // Check for WebRTC support
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Access the local camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((localStream) => {
+                const localVideo = document.getElementById('localVideo');
+                localVideo.srcObject = localStream;
+
+                // Example: Display the local video in a container
+                document.getElementById('remoteVideos').appendChild(localVideo);
+
+                // Access other users' cameras through a signaling server and peer-to-peer connections
+                // This involves signaling, setting up peer connections, and handling the stream from each user
+                // Refer to WebRTC tutorials and documentation for a complete implementation
+            })
+            .catch((error) => {
+                console.error('Error accessing camera:', error);
+            });
+    } else {
+        console.error('WebRTC is not supported in this browser');
+    }
+</script>
+
+</body>
+</html>
