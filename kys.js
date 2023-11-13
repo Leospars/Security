@@ -1,7 +1,8 @@
-let registeredUsers = ["Aaliyah", "Aashna-Paris", "Christina", "Delano", "Fitzgerald", "Javier", "Kisan", "Leon", "Matthew", "Michael", "Nicholas", "Nigel", "Richard", "Stashia"];
-let userFace = true;
-let unknownFace = false;
-const faceDetcted = userFace;
+const userFace = true;
+const unknownFace = false;
+let faceDetcted = userFace;
+let registeredUsers = ["Aaliyah", "Aashna-Paris", "Christina", "Delano", "Fitzgerald", "Javier", "Kisan", "Leon", "Matthew", "Michael", "Nicholas", "Nigel", "Richard", "Stacia"];
+
 function startCamera(camID) {
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(function (stream) {
@@ -40,7 +41,7 @@ function whoIsInHouse() {
     }
 }
 
-setInterval(whoIsInHouse, 1000);
+setInterval(whoIsInHouse, 2500);
 
 function randomUsers() {
     let randUsers = [];
@@ -53,16 +54,61 @@ function randomUsers() {
     }
     return randUsers;
 }
-//check is strinig is in an array?
 
 function printRandUsers(elementID) {
     let randUser = randomUsers();
+    let allSeen = "";
     let usersSeen = document.getElementById(elementID);
-    randUser.forEach(user => {
-        usersSeen.innerHTML = user + ", ";
+    randUser.forEach(element => {
+        allSeen += element;
+        if(element != randUser[randUser.length-1]) allSeen += ", ";
     });
+    usersSeen.innerHTML = allSeen;
+}
+function secondsToDhms(seconds) {
+    const milliseconds = seconds * 1000;
+    const date = new Date(milliseconds);
+   
+    const time = {
+       days: date.getUTCDate() - 1,
+       hours: date.getUTCHours(),
+       minutes: date.getUTCMinutes(),
+       seconds: date.getUTCSeconds(),
+    };
+   
+    return time;
 }
 
+var secondsUp = 100;
+function numTo2DigitString(number) {
+    // Convert the number to a string
+    let numberString = number.toString();
+  
+    // Check if the length is 1 (single digit)
+    if (numberString.length === 1) {
+      // Prepend '0' to make it a two-digit string
+      numberString = '0' + numberString;
+    }
+  
+    return numberString;
+  }
+
+var timeAwake = "";
+function systemAwakeTime() {
+    secondsUp+=1;
+    dhms = secondsToDhms(secondsUp);
+
+    timeAwake = numTo2DigitString(dhms.days) + ":" + numTo2DigitString(dhms.hours) + ":" +
+        numTo2DigitString(dhms.minutes) + ":" + numTo2DigitString(dhms.seconds);
+
+    console.log(secondsUp + " => " + timeAwake);
+    systemAwake = document.getElementById(systemAwakeTime);
+    systemAwake.innerHTML = timeAwake + " ";
+}
+
+
+
+//countdown function in js?
 function scream() {
     return 0;
 }

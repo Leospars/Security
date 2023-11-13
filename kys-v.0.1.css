@@ -3,40 +3,29 @@
     --mainMenu-h : 70px;
     --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --font-size: 20px;
-
-    --bg-color: 210, 240, 243 ;
-    --bg-opac: 0.9;
+    --bg-color: rgb(246, 221, 255);
     /* --bg-color: hsl(360, 77%, 64%); */
-    --bg-dark: 7, 65, 68;
+    --bg-dark: hsl(280, 2%, 26%);
     --text-alt: rgb(87, 112, 224);
-    --text-alt: #C52E10;
 
-    --link-color: rgb(110, 247, 247);
+    --link-color: hsl(180, 90%, 70%);
     --carousel-w: 900px;
-    background: rgb(31, 192, 224);
-    background-size: contain;
 }
 
 .container {
     margin: 0 20px;
 }
 
-body {    
-    background-color: rgba(var(--bg-color), var(--bg-opac));
-    margin: 20px 150px;
+body {
+    background-color: var(--bg-color);
+    margin: -70px 100px;
     font-family: var(--font);
-    background: rgba(var(--bg-color), var(--bg-opac))  center center no-repeat fixed;
-    
-    background-size: contain;
-    /* border-radius: 60px; */
 }
 body #container{
     padding: 20px 100px;
-    /* background-color:; */
-    border-radius: 40px;
-    box-shadow: rgb(var(--bg-dark)) 0 0 10px 150px;
+    background-color: white;
+    box-shadow: var(--bg-dark) 0 0 15px 20px;
 }
-
 body a{
     color: var(--text);
     font-size: var(--font-size);
@@ -52,25 +41,21 @@ body a:hover{
 
 
 #mainMenu{
-    background-color: #1ec0e1;
-    height: 130px;
-    /* position: absolute; */
-    top: 0;
-    right: 0;
+    background-color: aqua;
 }
-/* #mainMenu {
+#mainMenu {
     position: fixed;
     top:0;
     right: 0;
     height: var(--mainMenu-h);
-    background-color: rgba(var(--bg-color), var(--bg-opac));
+    background-color: var(--bg-color);
     width: 100%;
     
     z-index: 999;
     padding: 5px;
 
     border-bottom: 2px solid black;
-    box-shadow: rgb(var(--bg-dark)) 0 10px 15px;
+    box-shadow: var(--bg-dark) 0 10px 15px;
     border-radius: 0  0 40px 40px;
 }
 
@@ -86,13 +71,14 @@ body a:hover{
     padding: 0 10px;
     width: calc(100% - 180px);
     text-align: left;
-} */
+}
 
 h2,h3,h4,h5,h6{
     font-family: Playpen Sans;
 }
 h2 {
-    margin: 5px 5px 20px 5px;
+    margin: 180px 5px 20px 5px;
+    
     color: var(--text-alt);
 }
 
@@ -102,9 +88,7 @@ p{
 hr{
     opacity: 0.6; margin-bottom: 20px;
 }
-.gap{
-    margin-top: 180px;
-}
+
 
 table, tr{
     border: #5d5b5e solid 1px ;
@@ -118,28 +102,21 @@ tr:hover{
 }
 td, th{
     vertical-align: middle;
+    text-align: center;
     padding: 10px;
     border: none;
     border-spacing: 0 0;
     /* display: inline-block; */
 }
 th{
-    text-align: left;
+        text-align: left;
 }
 
 
 #logo{
+    max-height: 60px;
     margin: 0 5px;
-    border: #C52E10 2px solid;
     border-radius: 30px;
-    position: absolute;
-    top: 2%;
-    left: 0%;
-
-    /* display: block; */
-    width: 130px;
-    backdrop-filter: blur(3px);
-
 }
 
 
@@ -147,8 +124,8 @@ th{
     height: 260px;
     border-radius: 10%;
     /* display: inline-flex; */
-    border: 2px solid rgb(var(--bg-dark));
-    box-shadow: rgb(var(--bg-dark)) 5px 5px 10px 5px;
+    border: 2px solid var(--bg-dark);
+    box-shadow: var(--bg-dark) 5px 5px 10px 5px;
 }
 
 .userInfo {
@@ -167,6 +144,36 @@ th{
     align-content: flex-start;
 }
 
+#registeredUsers{
+    display: inline-flex;
+    max-width: 100%;
+}
+
+#registeredUsers img{
+    margin: 10px;
+    height: 160px
+}
+
+#registeredUsers p{
+    font-family: Playpen Sans;
+}
+
+#registeredUsers table{
+
+}
+
+#registeredUsers td, #registeredUsers th{
+    text-align: center;
+    vertical-align: middle;
+    font-family: Playpen Sans;
+}
+#registeredUsers td{
+    display: inline-block;
+}
+#registeredUsers tr{
+    display: inline-block;
+    /* width: 200px; */
+}
 
 
 video {
@@ -175,9 +182,9 @@ video {
 }
 .camFeed{
     /* display: fixed !important; */
-    width: 47%; 
+    width: 100%; 
     max-width:500px;
-    /* min-height: 375px; */
+    min-height: 375px;
     height: auto;
     /* height: fit-content; */
     /* margin: 0px calc((var(--carousel-w) - 500px)/2); */

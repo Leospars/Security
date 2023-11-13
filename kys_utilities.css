@@ -41,3 +41,64 @@ name {
     padding-left: 2px;
     font-family: Fira Code, monospace;
 }
+
+/* 
+ #registeredUsers{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+*/
+
+#registeredUsers img{
+    margin: 10px;
+    width: 160px;
+    height: 160px;
+    background-size: contain;
+} 
+
+/*#registeredUsers p{
+    font-family: Playpen Sans;
+}
+
+#registeredUsers table{
+    width: 100%;
+    min-width: 600px;
+    margin: 0 auto;
+}
+
+#registeredUsers td, #registeredUsers th{
+    text-align: center;
+    vertical-align: middle;
+    font-family: Playpen Sans;
+}*/
+#registeredUsers th{
+    border: none !important;
+    width: 100%;
+} 
+
+#registeredUsers tr{
+    display: inline-flex;
+    width: 200px;
+    border: 2px black solid;
+    width: 200px;
+    margin: 10px 5px;
+    border-radius: 10%;
+} 
+
+.registeredName
+{
+    
+
+}
+
+#settingsIcon:hover {
+    transform: rotate(180deg);
+
+}
+
+.blank{
+    border: none !important;
+    visibility: none;
+}
