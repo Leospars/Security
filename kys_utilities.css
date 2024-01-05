@@ -60,14 +60,14 @@ name {
 
 /*#registeredUsers p{
     font-family: Playpen Sans;
-}
+}*/
 
 #registeredUsers table{
-    width: 100%;
+    width: 85%;
     min-width: 600px;
-    margin: 0 auto;
 }
 
+/*
 #registeredUsers td, #registeredUsers th{
     text-align: center;
     vertical-align: middle;
@@ -90,7 +90,6 @@ name {
 .registeredName
 {
     
-
 }
 
 #settingsIcon:hover {

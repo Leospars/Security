@@ -1,7 +1,7 @@
 const userFace = true;
 const unknownFace = false;
 let faceDetcted = userFace;
-let registeredUsers = ["Aaliyah", "Aashna-Paris", "Christina", "Delano", "Fitzgerald", "Javier", "Kisan", "Leon", "Matthew", "Michael", "Nicholas", "Nigel", "Richard", "Stacia"];
+let registeredUsers = ["Aaliyah", "Aashna-Paris", "Christina", "Delano", "Fitzgerald", "Javier", "Kisan", "Leon", "Matthew", "Michael", "Nicholas", "Nigel", "Richard", "Stashia"];
 
 function startCamera(camID) {
     navigator.mediaDevices.getUserMedia({ video: true })
