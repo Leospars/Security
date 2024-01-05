@@ -7,18 +7,29 @@
     <title>KYS Security System</title>
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" > -->
-    <link rel="stylesheet" href="kys.css">
-    <link rel="stylesheet" href="kys_utilities.css">
+    <link rel="stylesheet" href="security.css">
+    <link rel="stylesheet" href="securitly_utilities.css">
     <link rel="stylesheet" href="bootstrap-snip-close.css">
-    <script src="kys.js"></script>
+    <script src="security.js"></script>
 </head>
 
 <body>
     <header>
         <div id="mainMenu">
-            <img src="default/kys_logo.png" alt="logo" id="logo">
-            <h1> Home Security System</h1>
-            <img src="icons/settings-icon.svg" alt="settings-icon" class="settingsIcon">
+            <div>
+                <img src="default/kys_logo.png" alt="logo" id="logo">
+                <h1> Home Security System</h1>
+                <a href="settings.html"><img src="icons/settings-icon.svg" alt="settings-icon" class="settingsIcon">
+                </a>
+                <div id="menu-list">
+                    <a href="#home">Home</a>
+                    <a href="#Alerts"> Alerts</a>
+                    <a href="#Notifications">Notifications</a>
+                    <a href="#Cameras">Camera Feed</a>
+                    <a href="#Sensors">Sensors</a>
+                    <a href="#RegisteredUsers">Registered User</a>
+                </div>
+            </div>
         </div>
     </header>
     <div id="container" class="container">
@@ -28,15 +39,15 @@
             <hr />
             <h3>User</h3>
             <div style="display: inline-flex">
-                <img src="default/blank_female_avatar.jpg" class="userImg">
+                <img src="Users/kisan-creary-user.jpeg" class="userImg">
 
                 <div class="userInfo">
-                    <p id="username">Kisan Macimus</p>
-                    <p id="address">Address:
+                    <h4 id="username">Kisan Creary</h4>
+                    <p id="address">Address:</p>
                     <p id="addressLine1" class="addressLine">Some Where In The World Boulevard</p>
                     <p id="addressLine2" class="addressLine">Some Where In The World Boulevard</p>
                     <p id="addressLine3" class="addressLine">Some Where In The World Boulevard</p>
-                    </p>
+                    </p></h4>
                 </div>
             </div>
             <br \>
@@ -130,7 +141,7 @@
                         <tr>
                             <td>
                                 <img src="default/blank_female_avatar.jpg" class="userImg" id="">
-                                <p>Stacia</p>
+                                <p>Stashia</p>
                             </td>
                         </tr>
                         <tr class="blank"></tr>
@@ -193,7 +204,7 @@
             </div>
 
             <div id="errorMessage" class="tab" style="display: none; ">
-                <p>YOUR GONNA DIE 🔪🩸</p>
+                <p style="font-size:30px">YOUR GONNA DIE 🔪🩸</p>
                 <p>Error Detected!</p>
 
                 <div class="tab alert">
@@ -500,12 +511,28 @@
                         <button> Rename</button>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <img src="icons/opened-door.svg" class="sensorIcon">
+                    </td>
+                    <td>
+                        <name>Kitchen</name>
+                    </td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox" unchecked>
+                            <span class="slider"></span>
+                        </label>
+                    </td>
+                    <td>
+                        <button> Rename</button>
+                    </td>
                 </tr>
             </table>
             <br \>
             <br \>
             <div id="houseLayout">
-                <img src=".../house-layout">
+                <img src="default/Home_Layout.png" id="homeLayout">
             </div>
             <script>
                 setInterval(whoIsInHouse(), 1000);
