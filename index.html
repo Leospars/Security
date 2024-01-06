@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="3; url=https://leospars.github.io/Security/securityApp.html">
+    <!-- <meta http-equiv="refresh" content="20; url=https://leospars.github.io/Security/securityApp.html"> -->
     <title>Document</title>
-    <link rel="stylesheet" href=".\security.css">
+    <link rel="stylesheet" href="security.css">
 </head>
-<body>
+<body >
+    <div id="container">
     <h1><u> Security System </u></h1>
     <h2> This is a prototype of a security system that uses a camera to detect motion and send an alert to the user. </h2>
     <h2> Tasks: </h2>
@@ -24,12 +25,26 @@
             <li> Uses a camera input </li>
         </ul>
         <br />
-    <h1>Redirecting to the main page in 3 seconds...</h1>
+        <p> Click <a href="https://leospars.github.io/Security/securityApp.html"">Here</a> to Redirect</p>
+    <h1>Redirecting to the main page in <em id="CountDown">XX</em> seconds...</h1>
+    </div>
     </body>
     <script>
-        // setTimeout(function(){
-        //     window.location.href = 'https://repo.github.io/Security/index.html/securityApp.html';
-        //     console.log("Page redirected to securityApp.html");
-        // }, 3000);
+        let timeLeft = 20;
+        let countDown = setInterval(function(){
+            if(timeLeft === 0){
+                window.open('https://leospars.github.io/Security/securityApp.html', '_self');
+                console.log("Page redirected to securityApp.html");
+            }
+            let timer = document.getElementById("CountDown");
+            timer.innerHTML = timeLeft;
+            timeLeft -= 1;
+            console.log(timeLeft);
+
+        }, 1000);
+
+        if(timeLeft === -1){
+            clearInterval(countDown);
+        }
     </script>
 </html>
