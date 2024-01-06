@@ -1,30 +1,38 @@
 const userFace = true;
 const unknownFace = false;
-let faceDetcted = userFace;
+let faceDetected = userFace;
 let registeredUsers = ["Aaliyah", "Aashna-Paris", "Christina", "Delano", "Fitzgerald", "Javier", "Kisan", "Leon", "Matthew", "Michael", "Nicholas", "Nigel", "Richard", "Stashia"];
 
 function startCamera(camID) {
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(function (stream) {
-            var videoElement = document.getElementById(camID);
+            let videoElement = document.getElementById(camID);
             videoElement.srcObject = stream;
         })
         .catch(function (error) {
             console.error("Error accessing camera: " + camID, error);
+            /* In the html the ID of the error message is the ID of each camera is the cameraID + "Error"
+            *  For example, the ID of the error message for cam1 is cam1Error
+             */
             let camErrorMessageID = camID + "Error";
-            errorMessage.style.display = "block";
+
+            //Toggle the error message to be visible and hides the safe message
+            errorMessage.style.display = "block"; //errorMessage is the ID of the div that contains the error message
             document.getElementById(camErrorMessageID).style.display = "block";
-            document.getElementById("safeMessage").style.display = "none";
+            safeMessage.style.display = "none";
         });
 }
-window.onload = startCamera("cam1");
-window.onload = startCamera("cam2");
-window.onload = startCamera("cam3");
-window.onload = startCamera("cam4");
-window.onload = startCamera("camTest");
 
-function isIntruder() {
-    return (faceDetcted == unknownFace) ? true : false;
+function startAllCameras(){
+    startCamera("cam1");
+    startCamera("cam2");
+    startCamera("cam3");
+    startCamera("cam4");
+}
+window.onload = startAllCameras();
+
+function isIntruder(){
+    return (faceDetected === unknownFace);
 }
 
 function whoIsInHouse() {
@@ -47,8 +55,8 @@ function randomUsers() {
     let randUsers = [];
     let randUserNum = rand(1, 4);
     for (let i = 1; i <= randUserNum; i++) {
-        randNum = rand(0, registeredUsers.length);
-        if (randUsers.includes(registeredUsers[randNum]) == false)
+        let randNum = rand(0, registeredUsers.length);
+        if (randUsers.includes(registeredUsers[randNum]) === false)
             randUsers.push(registeredUsers[randNum]);
         else i--;
     }
@@ -61,7 +69,7 @@ function printRandUsers(elementID) {
     let usersSeen = document.getElementById(elementID);
     randUser.forEach(element => {
         allSeen += element;
-        if(element != randUser[randUser.length-1]) allSeen += ", ";
+        if(element !== randUser[randUser.length-1]) allSeen += ", ";
     });
     usersSeen.innerHTML = allSeen;
 }
@@ -78,8 +86,6 @@ function secondsToDhms(seconds) {
    
     return time;
 }
-
-var secondsUp = 100;
 function numTo2DigitString(number) {
     // Convert the number to a string
     let numberString = number.toString();
@@ -89,21 +95,19 @@ function numTo2DigitString(number) {
       // Prepend '0' to make it a two-digit string
       numberString = '0' + numberString;
     }
-  
     return numberString;
-  }
+}
 
-var timeAwake = "";
-function systemAwakeTime() {
+let timeAwake = "";
+let secondsUp = 0;
+function systemAwakeTime(){
     secondsUp+=1;
-    dhms = secondsToDhms(secondsUp);
-
+    let dhms= secondsToDhms(secondsUp);
     timeAwake = numTo2DigitString(dhms.days) + ":" + numTo2DigitString(dhms.hours) + ":" +
         numTo2DigitString(dhms.minutes) + ":" + numTo2DigitString(dhms.seconds);
 
-    console.log(secondsUp + " => " + timeAwake);
-    systemAwake = document.getElementById(systemAwakeTime);
-    systemAwake.innerHTML = timeAwake + " ";
+    let systemAwake = document.getElementById("systemAwakeTime");
+    systemAwake.innerHTML = timeAwake;
 }
 
 
