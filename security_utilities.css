@@ -43,7 +43,7 @@ name {
 }
 
 /* 
- #registeredUsers{
+ .registeredUsers{
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -51,45 +51,45 @@ name {
 }
 */
 
-#registeredUsers img{
+.registeredUsers img{
     margin: 10px;
     width: 160px;
     height: 160px;
     background-size: contain;
-} 
+}
 
-/*#registeredUsers p{
+/*.registeredUsers p{
     font-family: Playpen Sans;
 }*/
 
-#registeredUsers table{
+.registeredUsers table{
     width: 85%;
     min-width: 600px;
 }
 
 /*
-#registeredUsers td, #registeredUsers th{
+.registeredUsers td, .registeredUsers th{
     text-align: center;
     vertical-align: middle;
     font-family: Playpen Sans;
 }*/
-#registeredUsers th{
+.registeredUsers th{
     border: none !important;
     width: 100%;
-} 
+}
 
-#registeredUsers tr{
+.registeredUsers tr{
     display: inline-flex;
     width: 200px;
     border: 2px black solid;
     width: 200px;
     margin: 10px 5px;
     border-radius: 10%;
-} 
+}
 
 .registeredName
 {
-    
+
 }
 
 #settingsIcon:hover {

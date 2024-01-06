@@ -18,12 +18,14 @@
 
 body {
     background-color: var(--bg-color);
-    margin: -70px 100px;
+    margin: 0 0;
     font-family: var(--font);
 }
 body #container{
+    background-color: rgba(var(--bg-color), var(--bg-opac));
+    margin: 20px 150px;
     padding: 20px 100px;
-    background-color: white;
+    /* background-color: white; */
     box-shadow: var(--bg-dark) 0 0 15px 20px;
 }
 body a{
@@ -128,49 +130,33 @@ th{
     box-shadow: var(--bg-dark) 5px 5px 10px 5px;
 }
 
-.userInfo {
-    height: 160px;
-    width: 400px;
-    min-width: calc(100% - 200px);
-    max-width: calc(100% - 200px);
-    padding-left: 20px;
-    padding-bottom: 5px;
-    border-radius: 10%;
-
-    display: inline-flex;
-    align-items: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-}
-
-#registeredUsers{
+.registeredUsers{
     display: inline-flex;
     max-width: 100%;
 }
 
-#registeredUsers img{
+.registeredUsers img{
     margin: 10px;
     height: 160px
 }
 
-#registeredUsers p{
-    font-family: Playpen Sans;
+.registeredUsers p{
+    font-family: Playpen Sans, serif;
 }
 
-#registeredUsers table{
+.registeredUsers table{
 
 }
 
-#registeredUsers td, #registeredUsers th{
+.registeredUsers td, .registeredUsers th{
     text-align: center;
     vertical-align: middle;
-    font-family: Playpen Sans;
+    font-family: Playpen Sans, serif;
 }
-#registeredUsers td{
+.registeredUsers td{
     display: inline-block;
 }
-#registeredUsers tr{
+.registeredUsers tr{
     display: inline-block;
     /* width: 200px; */
 }
